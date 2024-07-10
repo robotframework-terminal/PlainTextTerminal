@@ -1,0 +1,12 @@
+[build-system]
+requires = ["robotframework>=7.0.1", "robotframework-sshlibrary>=3.8.0"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "PlainTextTerminal"
+author = "Abhisit Sangjan"
+author-email = "abhisit.sangjan@gmail.com"
+home-page = "https://github.com/robotframework-terminal/PlainTextTerminal"
+
+[tool.black]
+line-length = 98

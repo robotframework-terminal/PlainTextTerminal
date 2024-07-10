@@ -1,0 +1,10 @@
+# Python
+.venv
+build/
+dist/
+**/**/*.egg-info
+**/**/*.py[cod]
+**/**/__pycache__
+
+# PyCharm
+.idea

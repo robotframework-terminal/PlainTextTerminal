@@ -1,0 +1,30 @@
+{
+    "python.languageServer": "Pylance",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnType": false,
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "isort.args": [
+        "--settings-file=${workspaceFolder}/.isort.cfg"
+    ],
+    "black-formatter.args": [
+        "--include=${workspaceFolder}/pyproject.toml"
+    ],
+    "ruff.lint.args": [
+        "--config=${workspaceFolder}/pyproject.toml"
+    ],
+    "yapf.args": [
+        "--style='{based_on_style: pep8, column_limit: 98}'"
+    ],
+    "pylint.args": [
+        "--rcfile=${workspaceFolder}/.pylintrc"
+    ],
+    "flake8.args": [
+        "--config=${workspaceFolder}/.flake8"
+    ]
+}

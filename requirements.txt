@@ -1,0 +1,9 @@
+black>=24.4.2
+flit_core==3.9.0
+pip>=24.0
+robotframework>=7.0.1
+robotframework-sshlibrary>=3.8.0
+robotframework-tidy>=4.13.0
+ruff>=0.5.1
+setuptools>=49.6.0
+wheel>=0.35.1

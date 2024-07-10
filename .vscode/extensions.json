@@ -1,0 +1,32 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
+	// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+	// List of extensions which should be recommended for users of this workspace.
+	"recommendations": [
+		// Basic mostly common configuration
+		"editorconfig.editorconfig",
+		// PyCharm theme
+		"danields761.dracula-theme-from-intellij-pythoned",
+		// Folder compare
+		"moshfeu.compare-folders",
+		// Python Language Lerver
+		"ms-python.vscode-pylance",
+		// SSH handy
+		"ms-vscode-remote.remote-ssh",
+		// YAML syntax highlight
+		"redhat.vscode-yaml",
+		// Robot Framework Language Server
+		"d-biehl.robotcode",
+		// AI assistant
+		"visualstudioexptteam.vscodeintellicode",
+		// Git commit view
+		"eamodio.gitlens",
+		// Python formatter
+		"ms-python.black-formatter"
+	],
+	// List of extensions which should not be recommended for users of this workspace.
+	"unwantedRecommendations": [
+		"tomiturtiainen.rf-intellisense",
+		"snooz82.rf-intellisense"
+	]
+}

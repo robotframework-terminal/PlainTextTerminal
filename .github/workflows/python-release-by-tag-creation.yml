@@ -1,0 +1,49 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python Release
+
+on:
+  push:
+    tags: 
+      - "v*"
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04]
+        python-version: ["3.10"]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install -r requirements.txt
+    - name: Lint with Ruff
+      run: |
+        python -m pip install ruff
+        ruff check --output-format=github .
+      continue-on-error: false
+    - name: Build Dist Wheel
+      run: |
+        mkdir -p ${{ github.workspace }}/artifact
+        python setup.py bdist_wheel
+        mv dist/* ${{ github.workspace }}/artifact/
+    - name: Public Wheel
+      uses: softprops/action-gh-release@v2
+      with:
+        draft: true
+        prerelease: false
+        files: "${{ github.workspace }}/artifact/*.whl"
+        fail_on_unmatched_files: true
